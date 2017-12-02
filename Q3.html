@@ -1,0 +1,92 @@
+<html>
+	<head>
+	</head>
+	<body>
+	<script type="text/javaScript">
+		function validateForm(){
+			if(error==1){
+				alert("Form can't Submit");
+				return false;
+			}else{
+			 purch=document.getElementById("purches").value;
+			 dis=document.getElementById("discount").value;
+			 pct =(1+dis/100);
+			 pay=(purch*pct);
+			document.getElementById("payable").value = pay;
+				return true;
+				alert("<img src='download (4).jpg'/> &nbsp;Form Sucessfully Submit");
+			}
+		}
+		function checkpur(){
+			var purch=document.getElementById("purches").value;
+			var element=document.getElementById("purcheslbl");
+			if(purch===""){
+			error=1;
+				element.innerHTML=" &nbsp; Total Purches cannot be Empty";
+				element.style.color="red";
+			}else{
+			error=0;
+				element.innerHTML="<img src='download (4).jpg'/> &nbsp;Done Correct Purches amount";
+				element.style.color="green";
+			}	
+		}
+		function checkDis(){
+			var dis=document.getElementById("discount").value;
+			var elem=document.getElementById("dicountlbl");
+			if(dis===""){
+			error=1;
+				elem.innerHTML="Discount Cannot be empty";
+				elem.style.color="red";
+			}else{
+				if(dis<=25){
+					elem.innerHTML="<img src='download (4).jpg'/> &nbsp; Done Correct discount Value";
+					elem.style.color="green";
+				}else{
+				error=0;
+					elem.innerHTML="Error Discount should be below 25%";
+					elem.style.color="red";
+				}
+			}
+		}
+	</script>
+			<table>
+				<tr>
+					<td>
+						Total Purches Rs:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="text" name="purches" id="purches" onblur="checkpur()"/>
+					</td>
+					<td>	
+						<label id="purcheslbl"></label>
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Discount presentage:   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<input type="text" name="Discount" id="discount" onblur="checkDis()"/>&nbsp;&nbsp; %
+					</td>
+					<td>
+						<label id="dicountlbl"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="Submit" name="Calculate" value="Calculate" align="center" onclick="validateForm()">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Total payable is Rs:   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<input type="text" name="payable" id="payable"/>
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>	

@@ -1,0 +1,103 @@
+<html>
+	<head>
+	</head>
+	<body>
+			<table>
+					<ol>
+						<li>Who is the inventor of world wide web?</li>
+						<br/>
+						<ul type=none>
+							<li><input type="radio" name="R11" id="ri1"/>Tim Berners Lee</li>
+							<li><input type="radio" name="R11"id="ri2"/>Steeve Jobs</li>
+							<li><input type="radio" name="R11"id="ri3"/>Mark Zucerberg</li>
+							<li><input type="radio" name="R11"id="ri4"/>Dennis Ritche</li>
+							<li><input type="radio" name="R11"id="ri5"/>Bill Gates</li>
+						</ul>
+						<br/>
+						Result : <input type="text" id="res1" />
+						<br/><br/>
+						Marks : <input type="text" name="A1" id="A1"/>
+						<br/><br/>
+						<li>What is the serverside Script?</li>
+						<br/>
+						<ul type=none>
+							<li><input type="radio" name="R21" id="ri6"/>Java Script</li>
+							<li><input type="radio" name="R21" id="ri7"/>Php</li>
+							<li><input type="radio" name="R21" id="ri8"/>Sql</li>
+							<li><input type="radio" name="R21" id="ri9"/>HTML</li>
+							<li><input type="radio" name="R21" id="ri10"/>Xml</li>
+						</ul>
+						<br/>
+						Result : <input type="text" name="Q2" id="Q2"/>
+						<br/><br/>
+						Marks : <input type="text" name="A2" id="A2"/>
+						<br/><br/>
+						<li>What is the Portocal used by the E-mail?</li>
+						<br/>
+						<ul type=none>
+						
+							<li><input type="radio" name="R31" id="ri11"/>IP</li>
+							<li><input type="radio" name="R31" id="ri12"/>HTTP</li>
+							<li><input type="radio" name="R31" id="ri13"/>FTP</li>
+							<li><input type="radio" name="R31" id="ri14"/>TCP</li>
+							<li><input type="radio" name="R31" id="ri15"/>SMTP</li>
+						</ul>
+						<br/>
+						Result : <input type="text" name="Q3" id="Q3" />
+						<br/><br/>
+						Marks : <input type="text" name="A3" id="A3"/>
+						<br/><br/>
+					</ol>			
+				<tr>
+					<input type="Submit" onclick="myFunction()">Total Marks : <input type="text" name="Tot" id="Tot"/> <br/>
+							<br/><div align="left"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+													&nbsp; &nbsp;
+							Comment : <input type="text" name="Comm" id="Comm"/></div>
+				</tr>
+			</table>
+		<p id="demo"></p>
+		<script type="text/javaScript">
+		function myFunction() {
+		var i=0;
+		var x=10;
+		var z=0;
+		if(document.getElementById("ri1").checked){
+		document.getElementById("res1").value = "correct";
+		i+=10;
+		document.getElementById("A1").value = x;
+		}else{
+		document.getElementById("res1").value = "Incorrect";
+		document.getElementById("A1").value = z;
+		}
+		if(document.getElementById("ri7").checked){
+		document.getElementById("Q2").value = "correct";
+		i+=10;
+		document.getElementById("A2").value = x;
+		}else{
+		document.getElementById("Q2").value = "Incorrect";
+		document.getElementById("A2").value = z;
+		}
+		if(document.getElementById("ri15").checked){
+		document.getElementById("Q3").value = "correct";
+		i+=10;
+		document.getElementById("A3").value = x;
+		}else{
+		document.getElementById("Q3").value = "Incorrect";
+		document.getElementById("A3").value = z;
+		}
+		document.getElementById("Tot").value = i;	
+			var txt;
+			if(i>=30){
+				txt="Excellent";
+			}else if(i>=20){
+				txt="Very Good";
+			}else if(i>=10){
+				txt="Good";
+			}else if(i>=0){
+				txt="Word Hard";
+			}
+			document.getElementById("Comm").value = txt;
+		}		
+		</script>	
+	</body>
+</html>

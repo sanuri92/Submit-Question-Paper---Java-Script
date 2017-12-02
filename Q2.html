@@ -1,0 +1,188 @@
+<html>
+	<head>
+	</head>
+	<body>
+	<script type="text/javaScript">
+		var error;
+		function validateForm(){
+			
+			if(error==1){
+				alert("Form can't Submit");
+				return false;
+			}else{
+				return true;
+				alert("<img src='download (4).jpg'/> &nbsp;Form Sucessfully Submit");
+			}
+		}
+		function checkName(){
+			var name=document.getElementById("fname").value;
+			var element=document.getElementById("fnamelable");
+			
+			if(name.length<10 && name===""){
+			error=1;
+				element.innerHTML="*first name should be at leat 5 characters and that can't be Empty";
+				element.style.color="red";
+			}else{
+			error=0;
+				element.innerHTML="<img src='download (4).jpg'/> &nbsp;Done valid First Name";
+				element.style.color="green";
+			}
+		}
+		function checkadd(){
+			var add=document.getElementById("address").value;
+			var addelement=document.getElementById("addresslable");
+			if(add===""){
+			error=1;
+				addelement.innerHTML="*That can't be empty";
+				addelement.style.color="red";
+			}else{
+			error=0;
+				addelement.innerHTML="<img src='download (4).jpg'/> &nbsp;Done valid Address";
+				addelement.style.color="green";
+			}
+		}
+		function checkzip(){
+			var zip=document.getElementById("zipcode").value;
+			var zipelement=document.getElementById("ziplable");
+			if(zip==="" && zip.length<10){
+			error=1;
+				zipelement.innerHTML="*That can't be empty";
+				zipelement.style.color="red";
+			}else{
+			error=0;
+				zipelement.innerHTML="<img src='download (4).jpg'/> &nbsp;Done valid Address";
+				zipelement.style.color="green";
+			}
+		}
+		function checkstat(){
+			var stat=document.Q2.status.value;
+			var staelement=document.getElementById("statuslable");
+			if(stat==="Please Select"){
+			error=1;
+				staelement.innerHTML="*Status Should be select ";
+				staelement.style.color="red";
+			}else{
+			error=0;
+				staelement.innerHTML="<img src='download (4).jpg'/> &nbsp;Done valid Selection on Status";
+				staelement.style.color="green";
+			}
+		}
+		function checkuser(){
+			var user=document.getElementById("user").value;
+			var element=document.getElementById("userlable");
+			if(user===""){
+			error=1;
+				element.innerHTML="*That can't be empty";
+				element.style.color="red";
+			}else{
+			error=0;
+			if(user.length>6 && user.length<8){
+				element.innerHTML="<img src='download (4).jpg'/> &nbsp;Done valid User Name";
+				element.style.color="green";
+			}else{
+				element.innerHTML="*Length should be in between 6-8";
+				element.style.color="red";
+			}
+			}
+		}
+		function checkemail(){
+			var email=document.getElementById("email").value;
+			var element=document.getElementById("emaillable");
+			var atpos=email.indexOf("@");
+			var dotpos=email.lastIndexOf(".");
+			if(email==="" && atpos<1|| dotpos<atpos+2||dotpos+2>=email.length){
+			error=1;
+				element.innerHTML="*That can't be empty OR Wrong Email format";
+				element.style.color="red";
+			}else{
+			error=0;
+				element.innerHTML="<img src='download (4).jpg'/> &nbsp; Done valid Address";
+				element.style.color="green";
+			}
+		}
+    </script>
+		<form  onsubmit="return validateForm()" id="Q2" name="Q2" method="post" action="submit_form.asp">
+			<table>
+				<tr>
+					<td>
+						First Name :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<input type="text" id="fname" name="fname" onblur="checkName()"/>
+					</td>
+					<td>
+						<label id="fnamelable"></label>
+					</td>		
+				</tr>
+				<tr>
+					<td>
+						Address:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<textarea rows="4" cols="50" id="address" name="address" onblur="checkadd()"></textarea>
+					</td>
+					<td>
+						<label id="addresslable"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Zip Code:   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<input type="text" name="zipcode" id="zipcode" onblur="checkzip()"/>
+					</td>
+					<td>
+						<label id="ziplable"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Status:   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<select id="status" name="status" onblur="checkstat()">
+							<option value="Please Select">Please Select</option>
+							<option value="Mr">Mr</option>
+							<option value="Miss">Miss</option>
+							<option value="Mrs">Mrs</option>
+							<option value="Rev">Rev</option>
+						</select>
+					</td>
+					<td>
+						<label id="statuslable"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Username(6-8 characters):   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<input type="text" name="user" id="user" onblur="checkuser()"/>
+					</td>
+					<td>
+						<label id="userlable"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Email:   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					</td>
+					<td>
+						<input type="text" name="email" id="email" onblur="checkemail()"/>
+					</td>
+					<td>
+						<label id="emaillable"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="Submit" name="submit" align="center">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

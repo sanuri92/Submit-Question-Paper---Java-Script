@@ -1,0 +1,76 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<script type="text/javaScript">
+		function check(){
+			if(document.getElementById('ri1').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell  <br/><br/><br/><br/><br/><br/>";
+			element.style.background="Black";
+			element.style.color="white";
+			}
+			if(document.getElementById('ri2').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell  <br/><br/><br/><br/><br/><br/>";
+			element.style.background="green";
+			element.style.color="white";
+			}	
+			if(document.getElementById('ri3').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell  <br/><br/><br/><br/><br/><br/>";
+			element.style.background="red";
+			}
+			if(document.getElementById('ri4').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell  <br/><br/><br/><br/><br/><br/>";
+			element.style.background="yellow";
+			}
+			if(document.getElementById('ri5').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell   <br/><br/><br/><br/><br/><br/>";
+			element.style.background="blue";
+			}
+			if(document.getElementById('ri6').checked){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/>Test Cell   <br/><br/><br/><br/><br/><br/>";
+			element.style.background="pink";
+			}
+			}
+			function reset(){
+			var element=document.getElementById("lbl");
+			element.innerHTML="<br/><br/><br/><br/><br/><br/><br/> Test Cell   <br/><br/><br/><br/><br/><br/>";
+			element.style.background="white";
+			element.style.color="Black";
+			}
+		</script>
+		<table>
+		<tr>
+			<td>
+			<ul type=none>
+				<li><input type="radio" name="R1" id="ri1" onchange="check()" />Black</li>
+				<br/>
+				<li><input type="radio" name="R1"id="ri2"onchange="check()"/>Green</li>
+				<br/>
+				<li><input type="radio" name="R1"id="ri3"onchange="check()"/>Red</li>
+				<br/>
+				<li><input type="radio" name="R1"id="ri4"onchange="check()"/>Yellow</li>
+				<br/>
+				<li><input type="radio" name="R1"id="ri5"onchange="check()"/>Blue</li>
+				<br/>
+				<li><input type="radio" name="R1"id="ri6"onchange="check()"/>Pink</li>
+				<br/>
+				<li><input type="Reset" name="set"id="set" onclick="reset()"/></li>
+			</ul>
+			</td>
+			<td>
+			</td>
+			<td>
+				<div id="lbl">
+				</div>
+			</td>
+		</tr>	
+		</table>
+	</body>
+</html>
